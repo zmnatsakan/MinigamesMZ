@@ -8,17 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		841622D62B0B6B38005F95B7 /* dicesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622D52B0B6B38005F95B7 /* dicesApp.swift */; };
-		841622D82B0B6B38005F95B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622D72B0B6B38005F95B7 /* ContentView.swift */; };
+		841622D82B0B6B38005F95B7 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622D72B0B6B38005F95B7 /* DiceView.swift */; };
 		841622DA2B0B6B39005F95B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841622D92B0B6B39005F95B7 /* Assets.xcassets */; };
 		841622DD2B0B6B39005F95B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841622DC2B0B6B39005F95B7 /* Preview Assets.xcassets */; };
+		841622E42B0B8140005F95B7 /* DiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622E32B0B8140005F95B7 /* DiceViewModel.swift */; };
+		841622E62B0B84B7005F95B7 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622E52B0B84B7005F95B7 /* GameResult.swift */; };
+		841622E92B0B9A73005F95B7 /* ShellGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622E82B0B9A73005F95B7 /* ShellGameView.swift */; };
+		841622EB2B0BA728005F95B7 /* CupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622EA2B0BA728005F95B7 /* CupView.swift */; };
+		841622ED2B0CC94C005F95B7 /* ShellGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622EC2B0CC94C005F95B7 /* ShellGameViewModel.swift */; };
+		841622F02B0CCA1E005F95B7 /* TwentyOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622EF2B0CCA1E005F95B7 /* TwentyOneView.swift */; };
+		841622F22B0D0C0B005F95B7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622F12B0D0C0B005F95B7 /* Card.swift */; };
+		841622F42B0D0C2A005F95B7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622F32B0D0C2A005F95B7 /* CardView.swift */; };
+		841622F62B0D0C45005F95B7 /* CardRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622F52B0D0C45005F95B7 /* CardRank.swift */; };
+		841622F82B0D0C4D005F95B7 /* CardSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622F72B0D0C4D005F95B7 /* CardSuit.swift */; };
+		841622FA2B0E0EA0005F95B7 /* TwentyOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622F92B0E0EA0005F95B7 /* TwentyOneViewModel.swift */; };
+		841622FC2B0E2168005F95B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622FB2B0E2168005F95B7 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		841622D22B0B6B38005F95B7 /* dices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dices.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		841622D22B0B6B38005F95B7 /* MinigamesMZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinigamesMZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841622D52B0B6B38005F95B7 /* dicesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dicesApp.swift; sourceTree = "<group>"; };
-		841622D72B0B6B38005F95B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		841622D72B0B6B38005F95B7 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		841622D92B0B6B39005F95B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841622DC2B0B6B39005F95B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		841622E32B0B8140005F95B7 /* DiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceViewModel.swift; sourceTree = "<group>"; };
+		841622E52B0B84B7005F95B7 /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		841622E82B0B9A73005F95B7 /* ShellGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellGameView.swift; sourceTree = "<group>"; };
+		841622EA2B0BA728005F95B7 /* CupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupView.swift; sourceTree = "<group>"; };
+		841622EC2B0CC94C005F95B7 /* ShellGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellGameViewModel.swift; sourceTree = "<group>"; };
+		841622EF2B0CCA1E005F95B7 /* TwentyOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyOneView.swift; sourceTree = "<group>"; };
+		841622F12B0D0C0B005F95B7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		841622F32B0D0C2A005F95B7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		841622F52B0D0C45005F95B7 /* CardRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRank.swift; sourceTree = "<group>"; };
+		841622F72B0D0C4D005F95B7 /* CardSuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSuit.swift; sourceTree = "<group>"; };
+		841622F92B0E0EA0005F95B7 /* TwentyOneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyOneViewModel.swift; sourceTree = "<group>"; };
+		841622FB2B0E2168005F95B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +59,13 @@
 		841622C92B0B6B38005F95B7 = {
 			isa = PBXGroup;
 			children = (
-				841622D42B0B6B38005F95B7 /* dices */,
+				841622D42B0B6B38005F95B7 /* Dices */,
+				841622E72B0B9A37005F95B7 /* ShellGame */,
+				841622EE2B0CC9EA005F95B7 /* TwentyOne */,
+				841622DB2B0B6B39005F95B7 /* Preview Content */,
+				841622D92B0B6B39005F95B7 /* Assets.xcassets */,
+				841622FB2B0E2168005F95B7 /* MainView.swift */,
+				841622D52B0B6B38005F95B7 /* dicesApp.swift */,
 				841622D32B0B6B38005F95B7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,20 +73,19 @@
 		841622D32B0B6B38005F95B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				841622D22B0B6B38005F95B7 /* dices.app */,
+				841622D22B0B6B38005F95B7 /* MinigamesMZ.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		841622D42B0B6B38005F95B7 /* dices */ = {
+		841622D42B0B6B38005F95B7 /* Dices */ = {
 			isa = PBXGroup;
 			children = (
-				841622D52B0B6B38005F95B7 /* dicesApp.swift */,
-				841622D72B0B6B38005F95B7 /* ContentView.swift */,
-				841622D92B0B6B39005F95B7 /* Assets.xcassets */,
-				841622DB2B0B6B39005F95B7 /* Preview Content */,
+				841622E32B0B8140005F95B7 /* DiceViewModel.swift */,
+				841622D72B0B6B38005F95B7 /* DiceView.swift */,
+				841622E52B0B84B7005F95B7 /* GameResult.swift */,
 			);
-			path = dices;
+			path = Dices;
 			sourceTree = "<group>";
 		};
 		841622DB2B0B6B39005F95B7 /* Preview Content */ = {
@@ -67,12 +96,35 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		841622E72B0B9A37005F95B7 /* ShellGame */ = {
+			isa = PBXGroup;
+			children = (
+				841622E82B0B9A73005F95B7 /* ShellGameView.swift */,
+				841622EA2B0BA728005F95B7 /* CupView.swift */,
+				841622EC2B0CC94C005F95B7 /* ShellGameViewModel.swift */,
+			);
+			path = ShellGame;
+			sourceTree = "<group>";
+		};
+		841622EE2B0CC9EA005F95B7 /* TwentyOne */ = {
+			isa = PBXGroup;
+			children = (
+				841622EF2B0CCA1E005F95B7 /* TwentyOneView.swift */,
+				841622F12B0D0C0B005F95B7 /* Card.swift */,
+				841622F32B0D0C2A005F95B7 /* CardView.swift */,
+				841622F52B0D0C45005F95B7 /* CardRank.swift */,
+				841622F72B0D0C4D005F95B7 /* CardSuit.swift */,
+				841622F92B0E0EA0005F95B7 /* TwentyOneViewModel.swift */,
+			);
+			path = TwentyOne;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		841622D12B0B6B38005F95B7 /* dices */ = {
+		841622D12B0B6B38005F95B7 /* MinigamesMZ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 841622E02B0B6B39005F95B7 /* Build configuration list for PBXNativeTarget "dices" */;
+			buildConfigurationList = 841622E02B0B6B39005F95B7 /* Build configuration list for PBXNativeTarget "MinigamesMZ" */;
 			buildPhases = (
 				841622CE2B0B6B38005F95B7 /* Sources */,
 				841622CF2B0B6B38005F95B7 /* Frameworks */,
@@ -82,9 +134,9 @@
 			);
 			dependencies = (
 			);
-			name = dices;
+			name = MinigamesMZ;
 			productName = dices;
-			productReference = 841622D22B0B6B38005F95B7 /* dices.app */;
+			productReference = 841622D22B0B6B38005F95B7 /* MinigamesMZ.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +154,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 841622CD2B0B6B38005F95B7 /* Build configuration list for PBXProject "dices" */;
+			buildConfigurationList = 841622CD2B0B6B38005F95B7 /* Build configuration list for PBXProject "MinigamesMZ" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +167,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				841622D12B0B6B38005F95B7 /* dices */,
+				841622D12B0B6B38005F95B7 /* MinigamesMZ */,
 			);
 		};
 /* End PBXProject section */
@@ -137,7 +189,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841622D82B0B6B38005F95B7 /* ContentView.swift in Sources */,
+				841622E62B0B84B7005F95B7 /* GameResult.swift in Sources */,
+				841622FC2B0E2168005F95B7 /* MainView.swift in Sources */,
+				841622F22B0D0C0B005F95B7 /* Card.swift in Sources */,
+				841622E42B0B8140005F95B7 /* DiceViewModel.swift in Sources */,
+				841622E92B0B9A73005F95B7 /* ShellGameView.swift in Sources */,
+				841622F82B0D0C4D005F95B7 /* CardSuit.swift in Sources */,
+				841622F42B0D0C2A005F95B7 /* CardView.swift in Sources */,
+				841622D82B0B6B38005F95B7 /* DiceView.swift in Sources */,
+				841622ED2B0CC94C005F95B7 /* ShellGameViewModel.swift in Sources */,
+				841622F62B0D0C45005F95B7 /* CardRank.swift in Sources */,
+				841622EB2B0BA728005F95B7 /* CupView.swift in Sources */,
+				841622FA2B0E0EA0005F95B7 /* TwentyOneViewModel.swift in Sources */,
+				841622F02B0CCA1E005F95B7 /* TwentyOneView.swift in Sources */,
 				841622D62B0B6B38005F95B7 /* dicesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +335,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"dices/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = L6QNYLXV8A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -300,7 +364,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"dices/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = L6QNYLXV8A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -325,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		841622CD2B0B6B38005F95B7 /* Build configuration list for PBXProject "dices" */ = {
+		841622CD2B0B6B38005F95B7 /* Build configuration list for PBXProject "MinigamesMZ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				841622DE2B0B6B39005F95B7 /* Debug */,
@@ -334,7 +398,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		841622E02B0B6B39005F95B7 /* Build configuration list for PBXNativeTarget "dices" */ = {
+		841622E02B0B6B39005F95B7 /* Build configuration list for PBXNativeTarget "MinigamesMZ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				841622E12B0B6B39005F95B7 /* Debug */,
