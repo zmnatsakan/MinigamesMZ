@@ -32,6 +32,13 @@ struct MainView: View {
                         .frame(maxWidth: .infinity)
                         .background(RoundedRectangle(cornerRadius: 15).foregroundStyle(.thickMaterial))
                 }
+                NavigationLink(destination: InvestmentView()) {
+                    Text("Investment")
+                        .font(.title.bold())
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(RoundedRectangle(cornerRadius: 15).foregroundStyle(.thickMaterial))
+                }
             }
             .padding()
         }
