@@ -1,27 +1,30 @@
 //
-//  InvestmentView.swift
+//  CryptoView.swift
 //  MinigamesMZ
 //
-//  Created by mnats on 22.11.2023.
+//  Created by mnats on 23.11.2023.
 //
 
 import SwiftUI
 
-struct InvestmentView: View {
-    @ObservedObject var viewModel = InvestmentViewModel()
+struct CryptoView: View {
+    @ObservedObject var viewModel = CryptoViewModel(numberOfCharts: 5)
     
     var body: some View {
         ZStack {
             VStack {
                 HStack {
-                    LineChartView(data: viewModel.chartData,
-                                  minY: viewModel.minY,
-                                  maxY: viewModel.maxY,
-                                  color: $viewModel.chartColor)
+                    ZStack {
+                        ForEach(0..<viewModel.numberOfCharts, id: \.self) { index in
+                            LineChartView(data: viewModel.chartDatas[index],
+                                          minY: viewModel.minY,
+                                          maxY: viewModel.maxY,
+                                          color: $viewModel.chartColors[index])
+                        }
+                    }
                     .frame(width: .infinity, height: 300)
                     .foregroundStyle(.red)
-                    .animation(.easeIn, value: viewModel.chartData.count)
-                    .background(RoundedRectangle(cornerRadius: 10).foregroundStyle(viewModel.chartColor.opacity(0.2)))
+                    .background(RoundedRectangle(cornerRadius: 10).foregroundStyle(viewModel.chartColors[0].opacity(0.2)))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 .padding()
@@ -29,11 +32,6 @@ struct InvestmentView: View {
                     Task {
                         await viewModel.play()
                     }
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(viewModel.buttonDisabled)
-                Button("Print") {
-                    print(viewModel.chartData)
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(viewModel.buttonDisabled)
@@ -62,5 +60,5 @@ struct InvestmentView: View {
 
 
 #Preview {
-    InvestmentView()
+    CryptoView()
 }
