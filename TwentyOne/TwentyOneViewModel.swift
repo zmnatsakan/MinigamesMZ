@@ -80,7 +80,7 @@ final class TwentyOneViewModel: ObservableObject {
         deck.shuffle()
         Task {
             for _ in 0...Int.random(in: 2...3) {
-                try? await Task.sleep(for: .seconds(0.5))
+                try? await Task.sleep(nanoseconds: 500_000_000)
                 dealToEnemy()
             }
         }
@@ -89,7 +89,7 @@ final class TwentyOneViewModel: ObservableObject {
     func finishGame() {
         isFinished = true
         Task {
-            try await Task.sleep(for: .seconds(2))
+            try await Task.sleep(nanoseconds: 2_000_000_000)
             withAnimation {
                 isFinishPresented = true
             }

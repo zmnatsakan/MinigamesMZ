@@ -34,7 +34,6 @@ struct CardView: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             RoundedRectangle(cornerRadius: 10)
-                .stroke(.black, lineWidth: 2)
                 .fill(card.isClosed ? Color(red: 0.7, green: 0.1, blue: 0.1) : .white)
                 .frame(width: 100, height: 150)
             if !card.isClosed {
@@ -44,6 +43,7 @@ struct CardView: View {
                     .padding(5)
             }
         }
+        .shadow(color: card.isClosed ? .black : Color(red: 0.7, green: 0.1, blue: 0.1), radius: 2)
         .overlay {
             if !card.isClosed {
                 Text(card.suit.rawValue)
@@ -56,5 +56,13 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(card: Card(.eight, of: .clubs))
+    VStack {
+        let card = Card(.eight, of: .clubs)
+        CardView(card: card)
+        Button("Turn") {
+            withAnimation {
+                card.isClosed.toggle()
+            }
+        }
+    }
 }

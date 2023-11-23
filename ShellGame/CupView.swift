@@ -59,7 +59,7 @@ struct CupView: View {
             moveUpDown()
             onCupRevealed(isCoinPresent)
         }
-        .onChange(of: reveal) {
+        .onChange(of: reveal) { _ in
             isCoinPresent = true
             moveUpDown()
         }
