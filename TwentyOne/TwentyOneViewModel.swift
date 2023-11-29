@@ -13,10 +13,26 @@ final class TwentyOneViewModel: ObservableObject {
     @Published var hand: [Card] = []
     @Published var enemyHand: [Card] = []
     @Published var enemyRevealed = false
-    @Published var enemyCardsDelt = 0
     @Published var enemyScore: Int? = nil
+    @Published var isEnemyDealt = false
     @Published var isFinished = false
     @Published var isFinishPresented = false
+    @Published var enemyTarget: Int
+    @Published var guaranteedWin = false
+    
+    init(enemyTarget: Int, guaranteedWin: Bool = false) {
+        self.deck = []
+        self.hand = []
+        self.enemyHand = []
+        self.enemyRevealed = false
+        self.enemyScore = nil
+        self.isFinished = false
+        self.isFinishPresented = false
+        self.isEnemyDealt = false
+        self.enemyTarget = enemyTarget
+        self.guaranteedWin = guaranteedWin
+
+    }
     
     var playerScore: Int {
         return hand.reduce(0, { $0 + $1.rank.rawValue })
@@ -26,9 +42,9 @@ final class TwentyOneViewModel: ObservableObject {
             return .lose
         } else if enemyScore ?? 0 > 21 {
             return .win
-        } else if enemyScore! > playerScore {
+        } else if enemyScore ?? 0 > playerScore {
             return .lose
-        } else if enemyScore! < playerScore {
+        } else if enemyScore ?? 0 < playerScore {
             return . win
         } else {
             return .draw
@@ -51,12 +67,18 @@ final class TwentyOneViewModel: ObservableObject {
         }
     }
     
-    func dealToEnemy() {
-        guard let card = deck.first else { return }
-        withAnimation {
-            enemyHand.append(card)
-            deck.remove(at: 0)
+    func dealToEnemy() async {
+        let combinations = CardCombinator.findCombinations(cards: deck, targetSum: enemyTarget)
+        guard !combinations.isEmpty else { return }
+        let willBeDeltToEnemy = combinations.randomElement()!
+        for card in willBeDeltToEnemy {
+            withAnimation {
+                enemyHand.append(card)
+                deck.removeAll { $0 == card }
+            }
+            try? await Task.sleep(nanoseconds: 500_000_000)
         }
+        isEnemyDealt = true
     }
     
     func resetGame() {
@@ -64,25 +86,33 @@ final class TwentyOneViewModel: ObservableObject {
         hand = []
         enemyHand = []
         enemyRevealed = false
-        enemyCardsDelt = 0
         enemyScore = nil
         isFinished = false
         isFinishPresented = false
-        startGame()
+        isEnemyDealt = false
+        print("RESET")
     }
     
-    func startGame() {
+    func startGame() async {
+        print("ENEMYTARGET: \(enemyTarget)")
         for suit in CardSuit.allCases {
             for rank in CardRank.allCases {
                 deck.append(Card(rank, of: suit))
             }
         }
         deck.shuffle()
-        Task {
-            for _ in 0...Int.random(in: 2...3) {
-                try? await Task.sleep(nanoseconds: 500_000_000)
-                dealToEnemy()
+        try? await Task.sleep(nanoseconds: 500_000_000)
+        await  dealToEnemy()
+        
+        if guaranteedWin {
+            let combinations = CardCombinator.findCombinations(cards: deck, targetSum: 21)
+            guard !combinations.isEmpty else { return }
+            let willBeDeltToPlayer = combinations.sorted(by: { $0.last!.rank.rawValue > $1.last!.rank.rawValue })[Int.random(in: 0...combinations.count / 4)]
+            for card in willBeDeltToPlayer {
+                deck.removeAll { $0 == card }
             }
+            deck = willBeDeltToPlayer + deck
+            return
         }
     }
     

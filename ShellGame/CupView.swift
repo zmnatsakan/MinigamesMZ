@@ -41,21 +41,21 @@ struct CupView: View {
     
     var body: some View {
         ZStack {
-            if isCoinPresent {
-                Circle()
-                    .frame(width: 50)
-                    .offset(y: 20)
-                    .foregroundColor(.yellow)
-            }
             Image("cup")
                 .resizable()
-                .scaledToFit()
-                .frame(width: 100)
                 .offset(y: isUp ? -70 : 0)
+                .aspectRatio(1, contentMode: .fit)
+                .background {
+                    if isCoinPresent {
+                        Circle()
+                            .scale(isUp ? 0.4 : 0)
+                            .offset(y: 20)
+                            .foregroundColor(.yellow)
+                    }
+                }
         }
         .onTapGesture {
             isCoinPresent = winChance > Float.random(in: 0...1)
-            print(winChance, isCoinPresent)
             moveUpDown()
             onCupRevealed(isCoinPresent)
         }
@@ -67,5 +67,9 @@ struct CupView: View {
 }
 
 #Preview {
-    CupView(id: 0, reveal: .constant(false), winChance: 0.5)
+    HStack {
+        CupView(id: 0, reveal: .constant(false), winChance: 1)
+        CupView(id: 0, reveal: .constant(false), winChance: 1)
+        CupView(id: 0, reveal: .constant(false), winChance: 1)
+    }
 }

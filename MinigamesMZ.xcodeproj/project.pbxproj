@@ -28,6 +28,11 @@
 		849A765C2B0F65E9009EF692 /* InvestmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A765B2B0F65E9009EF692 /* InvestmentViewModel.swift */; };
 		849A765F2B0F8693009EF692 /* CryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A765E2B0F8693009EF692 /* CryptoView.swift */; };
 		849A76612B0F86D9009EF692 /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A76602B0F86D9009EF692 /* CryptoViewModel.swift */; };
+		849A76632B10A914009EF692 /* RunningLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A76622B10A914009EF692 /* RunningLineView.swift */; };
+		84DB835C2B10C7020096CAAF /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB835B2B10C7020096CAAF /* OptionView.swift */; };
+		84DB835E2B10D7A60096CAAF /* OptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB835D2B10D7A60096CAAF /* OptionViewModel.swift */; };
+		84DB83602B14A9B90096CAAF /* CardCombinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB835F2B14A9B90096CAAF /* CardCombinator.swift */; };
+		84DB83632B14D8130096CAAF /* BetWithStrangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB83622B14D8130096CAAF /* BetWithStrangerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +58,11 @@
 		849A765B2B0F65E9009EF692 /* InvestmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentViewModel.swift; sourceTree = "<group>"; };
 		849A765E2B0F8693009EF692 /* CryptoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoView.swift; sourceTree = "<group>"; };
 		849A76602B0F86D9009EF692 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
+		849A76622B10A914009EF692 /* RunningLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningLineView.swift; sourceTree = "<group>"; };
+		84DB835B2B10C7020096CAAF /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		84DB835D2B10D7A60096CAAF /* OptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewModel.swift; sourceTree = "<group>"; };
+		84DB835F2B14A9B90096CAAF /* CardCombinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCombinator.swift; sourceTree = "<group>"; };
+		84DB83622B14D8130096CAAF /* BetWithStrangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetWithStrangerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +79,8 @@
 		841622C92B0B6B38005F95B7 = {
 			isa = PBXGroup;
 			children = (
+				84DB83612B14D7FA0096CAAF /* BetWithStranger */,
+				84DB835A2B10C6E80096CAAF /* Options */,
 				849A765D2B0F864F009EF692 /* Crypto */,
 				849A76562B0E4281009EF692 /* Investment */,
 				841622D42B0B6B38005F95B7 /* Dices */,
@@ -121,12 +133,13 @@
 		841622EE2B0CC9EA005F95B7 /* TwentyOne */ = {
 			isa = PBXGroup;
 			children = (
+				841622F92B0E0EA0005F95B7 /* TwentyOneViewModel.swift */,
 				841622EF2B0CCA1E005F95B7 /* TwentyOneView.swift */,
 				841622F12B0D0C0B005F95B7 /* Card.swift */,
 				841622F32B0D0C2A005F95B7 /* CardView.swift */,
 				841622F52B0D0C45005F95B7 /* CardRank.swift */,
 				841622F72B0D0C4D005F95B7 /* CardSuit.swift */,
-				841622F92B0E0EA0005F95B7 /* TwentyOneViewModel.swift */,
+				84DB835F2B14A9B90096CAAF /* CardCombinator.swift */,
 			);
 			path = TwentyOne;
 			sourceTree = "<group>";
@@ -146,8 +159,26 @@
 			children = (
 				849A765E2B0F8693009EF692 /* CryptoView.swift */,
 				849A76602B0F86D9009EF692 /* CryptoViewModel.swift */,
+				849A76622B10A914009EF692 /* RunningLineView.swift */,
 			);
 			path = Crypto;
+			sourceTree = "<group>";
+		};
+		84DB835A2B10C6E80096CAAF /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				84DB835B2B10C7020096CAAF /* OptionView.swift */,
+				84DB835D2B10D7A60096CAAF /* OptionViewModel.swift */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		84DB83612B14D7FA0096CAAF /* BetWithStranger */ = {
+			isa = PBXGroup;
+			children = (
+				84DB83622B14D8130096CAAF /* BetWithStrangerView.swift */,
+			);
+			path = BetWithStranger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,10 +253,14 @@
 			files = (
 				841622E62B0B84B7005F95B7 /* GameResult.swift in Sources */,
 				849A76582B0E4294009EF692 /* InvestmentView.swift in Sources */,
+				84DB83602B14A9B90096CAAF /* CardCombinator.swift in Sources */,
 				841622FC2B0E2168005F95B7 /* MainView.swift in Sources */,
+				84DB83632B14D8130096CAAF /* BetWithStrangerView.swift in Sources */,
 				849A765A2B0E5665009EF692 /* LineChartView.swift in Sources */,
 				849A76612B0F86D9009EF692 /* CryptoViewModel.swift in Sources */,
 				849A765C2B0F65E9009EF692 /* InvestmentViewModel.swift in Sources */,
+				849A76632B10A914009EF692 /* RunningLineView.swift in Sources */,
+				84DB835C2B10C7020096CAAF /* OptionView.swift in Sources */,
 				841622F22B0D0C0B005F95B7 /* Card.swift in Sources */,
 				841622E42B0B8140005F95B7 /* DiceViewModel.swift in Sources */,
 				841622E92B0B9A73005F95B7 /* ShellGameView.swift in Sources */,
@@ -235,6 +270,7 @@
 				841622ED2B0CC94C005F95B7 /* ShellGameViewModel.swift in Sources */,
 				841622F62B0D0C45005F95B7 /* CardRank.swift in Sources */,
 				841622EB2B0BA728005F95B7 /* CupView.swift in Sources */,
+				84DB835E2B10D7A60096CAAF /* OptionViewModel.swift in Sources */,
 				841622FA2B0E0EA0005F95B7 /* TwentyOneViewModel.swift in Sources */,
 				841622F02B0CCA1E005F95B7 /* TwentyOneView.swift in Sources */,
 				841622D62B0B6B38005F95B7 /* dicesApp.swift in Sources */,
@@ -385,7 +421,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dices;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diceswqerer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -414,7 +450,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dices;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diceswqerer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

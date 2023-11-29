@@ -123,6 +123,7 @@
 
 import SwiftUI
 
+@MainActor
 final class CryptoViewModel: ObservableObject {
     @Published var chartDatas: [[Double]] = []
     @Published var chartColors: [Color] = []

@@ -9,10 +9,13 @@ import SwiftUI
 
 class Card: ObservableObject, Equatable {
     static func == (lhs: Card, rhs: Card) -> Bool {
-        lhs.rank == rhs.rank
+        lhs.rank == rhs.rank && lhs.suit == rhs.suit
     }
     
-    let id = UUID()
+//    let id = UUID()
+    var id: String {
+        return "\(rank.rawValue)_\(suit.rawValue)"
+    }
     
     @Published var isClosed = true
     var rank: CardRank

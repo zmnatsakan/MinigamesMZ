@@ -8,23 +8,34 @@
 import SwiftUI
 
 struct InvestmentView: View {
-    @ObservedObject var viewModel = InvestmentViewModel()
+    @ObservedObject var viewModel: InvestmentViewModel
+    @State var runningView: RunningLineView
+    
+    init() {
+        self.viewModel = InvestmentViewModel()
+        let array = ["Gazik", "Sberz", "Lukol", "Yandx", "Rosny", "Aerok", "Rostl", "VKut", "Magny", "Kaspk", "Belug", "AlfaZ", "X5ail", "Mobil", "Trans", "Noril", "Vebro", "Tatnf", "Evraz", "Sevrl"]
+        self.runningView = RunningLineView(items: array)
+    }
     
     var body: some View {
         ZStack {
             VStack {
+                runningView
+                    .frame(height: 100)
                 HStack {
                     LineChartView(data: viewModel.chartData,
                                   minY: viewModel.minY,
                                   maxY: viewModel.maxY,
                                   color: $viewModel.chartColor)
-                    .frame(width: .infinity, height: 300)
+                    .frame(height: 300)
                     .foregroundStyle(.red)
-                    .animation(.easeIn, value: viewModel.chartData.count)
-                    .background(RoundedRectangle(cornerRadius: 10).foregroundStyle(viewModel.chartColor.opacity(0.2)))
+                    .background(
+                        RoundedRectangle(cornerRadius: 10).foregroundStyle(viewModel.chartColor.opacity(0.2))
+                    )
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 .padding()
+                
                 Button("Invest") {
                     Task {
                         await viewModel.play()
@@ -37,6 +48,7 @@ struct InvestmentView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(viewModel.buttonDisabled)
+                Spacer()
             }
             
             if viewModel.isFinishPresented {

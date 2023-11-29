@@ -15,14 +15,16 @@ class DiceViewViewModel: ObservableObject {
     @Published var enemyFaces: [String]
     @Published var score: (Int, Int)
     @Published var gameResult: GameResult?
+    @Published var guaranteedWin = false
 
     private var faces: [String]
     
-    init(diceAmount: Int = 1) {
+    init(diceAmount: Int = 1, guaranteedWin: Bool = false) {
         self.diceRotation = 0
         self.diceRotating = false
         self.score = (0, 0)
         self.gameResult = nil
+        self.guaranteedWin = guaranteedWin
         self.faces = ["1", "2", "3", "4", "5", "6"]
         self.playerFaces = [String](repeating: "1", count: diceAmount)
         self.enemyFaces = [String](repeating: "1", count: diceAmount)
@@ -49,12 +51,25 @@ class DiceViewViewModel: ObservableObject {
             for i in 0..<enemyFaces.count {
                 enemyFaces[i] = faces.randomElement()!
             }
-            diceRotating = false
+            
+            if guaranteedWin {
+                while playerFaces.reduce(0, {$0 + (Int($1) ?? 0)}) <= enemyFaces.reduce(0, {$0 + (Int($1) ?? 0)}) {
+                    for i in 0..<playerFaces.count {
+                        playerFaces[i] = faces.randomElement()!
+                    }
+                    
+                    for i in 0..<enemyFaces.count {
+                        enemyFaces[i] = faces.randomElement()!
+                    }
+                }
+            }
             
             score = (playerFaces.reduce(0) {$0 + (Int($1) ?? 0)},
                      enemyFaces.reduce(0) {$0 + (Int($1) ?? 0)})
             
-            print(score)
+            
+            
+            diceRotating = false
             
             gameResult = score.0 == score.1 ? .draw : score.0 > score.1 ? .win : .lose
         }

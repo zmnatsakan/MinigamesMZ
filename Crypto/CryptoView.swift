@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct CryptoView: View {
-    @ObservedObject var viewModel = CryptoViewModel(numberOfCharts: 5)
+    @ObservedObject var viewModel = CryptoViewModel(numberOfCharts: 3)
+    @State var runningView: RunningLineView
+    
+    init(numberOfCharts: Int = 3) {
+        self.viewModel = CryptoViewModel(numberOfCharts: numberOfCharts)
+        let array = ["BitBuck", "CoinCon", "EtherYm", "RipRap", "LiteLot", "DashDsh", "DogeDbl", "Linky", "MoneroM", "StelarS", "Cardano", "PolkaDz", "TethrTl", "BinBuck", "Uniswop", "VeChnVt", "TronTrk", "Cosmos", "TezosT", "NeoNug"]
+        self.runningView = RunningLineView(items: array)
+    }
     
     var body: some View {
         ZStack {
             VStack {
+                runningView.frame(height: 100)
                 HStack {
                     ZStack {
                         ForEach(0..<viewModel.numberOfCharts, id: \.self) { index in
@@ -22,7 +30,7 @@ struct CryptoView: View {
                                           color: $viewModel.chartColors[index])
                         }
                     }
-                    .frame(width: .infinity, height: 300)
+                    .frame(height: 300)
                     .foregroundStyle(.red)
                     .background(RoundedRectangle(cornerRadius: 10).foregroundStyle(viewModel.chartColors[0].opacity(0.2)))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -35,6 +43,8 @@ struct CryptoView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(viewModel.buttonDisabled)
+                
+                Spacer()
             }
             
             if viewModel.isFinishPresented {

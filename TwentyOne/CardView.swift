@@ -36,6 +36,7 @@ struct CardView: View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(card.isClosed ? Color(red: 0.7, green: 0.1, blue: 0.1) : .white)
                 .frame(width: 100, height: 150)
+                .shadow(color: card.isClosed ? .black : Color(red: 0.7, green: 0.1, blue: 0.1), radius: 2)
             if !card.isClosed {
                 Text(rankLabel)
                     .font(.title.bold())
@@ -43,7 +44,6 @@ struct CardView: View {
                     .padding(5)
             }
         }
-        .shadow(color: card.isClosed ? .black : Color(red: 0.7, green: 0.1, blue: 0.1), radius: 2)
         .overlay {
             if !card.isClosed {
                 Text(card.suit.rawValue)

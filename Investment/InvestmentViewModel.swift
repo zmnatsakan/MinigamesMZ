@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 final class InvestmentViewModel: ObservableObject {
     @Published var chartData: [Double] =  [
         04,04,05,08,05,08,06,03,37,35,75,38,40,37,37,36,40,38,40,38,41,35,83,81,80,53
@@ -18,9 +19,11 @@ final class InvestmentViewModel: ObservableObject {
     @Published var buttonDisabled = false
     @Published var isFinishPresented = false
     @Published var gameResult: GameResult = .draw
+    @Published var guaranteedWin = false
     var steps = 50
     
-    init() {
+    init(guaranteedWin: Bool = false) {
+        self.guaranteedWin = guaranteedWin
         Task {
             await animateChart(delay: 0)
             buttonDisabled = false
@@ -75,7 +78,6 @@ final class InvestmentViewModel: ObservableObject {
     
     private func animateChart(delay: Float = 0.05) async {
         let stages: [Int] = Array(Array(2..<steps - 2).shuffled().prefix(7))
-        print(stages.count)
         buttonDisabled = true
         entryPoint = chartData.last!
         var currentEntryPoint = entryPoint
@@ -97,7 +99,11 @@ final class InvestmentViewModel: ObservableObject {
     func play() async {
         await animateChart()
         withAnimation {
-            Bool.random() ? win() : lose()
+            if guaranteedWin {
+                win()
+            } else {
+                Bool.random() ? win() : lose()
+            }
         }
     }
 }
