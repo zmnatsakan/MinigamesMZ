@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShellGameView: View {
     //MARK: - cupsCount = 1, winChance = 0 при плохой карме
-    @ObservedObject var viewModel = ShellGameViewModel(cupsCount: 1, winChance: 0.3)
+    @ObservedObject var viewModel = ShellGameViewModel(cupsCount: 3, winChance: 0.3)
     @State var reveal: Bool = false
     @State var shuffleInProgress = false
     

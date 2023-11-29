@@ -23,6 +23,8 @@
 		841622F82B0D0C4D005F95B7 /* CardSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622F72B0D0C4D005F95B7 /* CardSuit.swift */; };
 		841622FA2B0E0EA0005F95B7 /* TwentyOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622F92B0E0EA0005F95B7 /* TwentyOneViewModel.swift */; };
 		841622FC2B0E2168005F95B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841622FB2B0E2168005F95B7 /* MainView.swift */; };
+		8456BA2D2B17582400529494 /* ClickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456BA2C2B17582400529494 /* ClickerView.swift */; };
+		8456BA312B17986A00529494 /* ClickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456BA302B17986A00529494 /* ClickerViewModel.swift */; };
 		849A76582B0E4294009EF692 /* InvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A76572B0E4294009EF692 /* InvestmentView.swift */; };
 		849A765A2B0E5665009EF692 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A76592B0E5665009EF692 /* LineChartView.swift */; };
 		849A765C2B0F65E9009EF692 /* InvestmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A765B2B0F65E9009EF692 /* InvestmentViewModel.swift */; };
@@ -53,6 +55,8 @@
 		841622F72B0D0C4D005F95B7 /* CardSuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSuit.swift; sourceTree = "<group>"; };
 		841622F92B0E0EA0005F95B7 /* TwentyOneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyOneViewModel.swift; sourceTree = "<group>"; };
 		841622FB2B0E2168005F95B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8456BA2C2B17582400529494 /* ClickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerView.swift; sourceTree = "<group>"; };
+		8456BA302B17986A00529494 /* ClickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerViewModel.swift; sourceTree = "<group>"; };
 		849A76572B0E4294009EF692 /* InvestmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentView.swift; sourceTree = "<group>"; };
 		849A76592B0E5665009EF692 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		849A765B2B0F65E9009EF692 /* InvestmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentViewModel.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		841622C92B0B6B38005F95B7 = {
 			isa = PBXGroup;
 			children = (
+				8456BA2B2B17580E00529494 /* Clicker */,
 				84DB83612B14D7FA0096CAAF /* BetWithStranger */,
 				84DB835A2B10C6E80096CAAF /* Options */,
 				849A765D2B0F864F009EF692 /* Crypto */,
@@ -142,6 +147,15 @@
 				84DB835F2B14A9B90096CAAF /* CardCombinator.swift */,
 			);
 			path = TwentyOne;
+			sourceTree = "<group>";
+		};
+		8456BA2B2B17580E00529494 /* Clicker */ = {
+			isa = PBXGroup;
+			children = (
+				8456BA2C2B17582400529494 /* ClickerView.swift */,
+				8456BA302B17986A00529494 /* ClickerViewModel.swift */,
+			);
+			path = Clicker;
 			sourceTree = "<group>";
 		};
 		849A76562B0E4281009EF692 /* Investment */ = {
@@ -253,6 +267,7 @@
 			files = (
 				841622E62B0B84B7005F95B7 /* GameResult.swift in Sources */,
 				849A76582B0E4294009EF692 /* InvestmentView.swift in Sources */,
+				8456BA312B17986A00529494 /* ClickerViewModel.swift in Sources */,
 				84DB83602B14A9B90096CAAF /* CardCombinator.swift in Sources */,
 				841622FC2B0E2168005F95B7 /* MainView.swift in Sources */,
 				84DB83632B14D8130096CAAF /* BetWithStrangerView.swift in Sources */,
@@ -263,6 +278,7 @@
 				84DB835C2B10C7020096CAAF /* OptionView.swift in Sources */,
 				841622F22B0D0C0B005F95B7 /* Card.swift in Sources */,
 				841622E42B0B8140005F95B7 /* DiceViewModel.swift in Sources */,
+				8456BA2D2B17582400529494 /* ClickerView.swift in Sources */,
 				841622E92B0B9A73005F95B7 /* ShellGameView.swift in Sources */,
 				841622F82B0D0C4D005F95B7 /* CardSuit.swift in Sources */,
 				841622F42B0D0C2A005F95B7 /* CardView.swift in Sources */,
